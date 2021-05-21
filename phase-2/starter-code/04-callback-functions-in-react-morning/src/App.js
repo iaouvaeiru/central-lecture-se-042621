@@ -26,10 +26,18 @@ class App extends React.Component{
   }
 
   // Create function to toggle form (toggleForm)
-  // ...
+  toggleForm = () => {
+    this.setState({
+      formView: !this.state.formView
+    })
+  }
 
   // Create function to change Parent's "color" state (changeColor)
-  // ...
+  changeColor = () => {
+    this.setState({
+      color: "blue"
+    })
+  }
 
   render(){
     return (
@@ -41,16 +49,15 @@ class App extends React.Component{
           description="an app we made"
 
           // Pass changeColor() as prop to NavBar
-          // ...
+          changeColor={this.changeColor}
         />
 
         {/* Add toggleForm click behavior */}
-        <button>Show/Hide New Painting Form</button>
+        <button onClick={this.toggleForm}>Show/Hide New Painting Form</button>
 
         {/* Render PaintingForm or PaintingsList Components based upon toggleForm */}
-        {/* ... */}
-      
-        <PaintingsList paintings={this.state.paintings} />
+        {this.state.formView ? <PaintingForm /> : <PaintingsList paintings={this.state.paintings} />}
+        
       </div>
     );
   }

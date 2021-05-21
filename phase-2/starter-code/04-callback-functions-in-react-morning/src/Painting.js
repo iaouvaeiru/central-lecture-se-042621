@@ -9,6 +9,10 @@ class Painting extends React.Component{
     }
   }
 
+  addVote = () => { 
+    this.setState({votes: this.state.votes + 1})
+  }
+
   // Breakout Activity #1: Create Function to Add Votes (addVotes)
   // ...
 
@@ -27,7 +31,7 @@ class Painting extends React.Component{
         <div class="ui labeled button" tabindex="0">
 
         {/* Breakout Activity #1: Call addVotes() via onClick */}
-          <div class="ui red button">
+          <div class="ui red button" onClick={this.addVote}>
             <i class="heart icon"></i> Add Vote
           </div>
           <a class="ui basic red left pointing label">

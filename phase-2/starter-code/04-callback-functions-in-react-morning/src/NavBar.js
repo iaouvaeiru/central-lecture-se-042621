@@ -10,7 +10,7 @@ const NavBar = props => {
       </a>
 
       {/* Call changeColor() via onClick using props */}
-      <button>Change color</button>
+      <button onClick={props.changeColor}>Change color</button>
     </div>
   );
 };

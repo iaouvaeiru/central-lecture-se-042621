@@ -5,13 +5,12 @@ import Painting from './Painting';
 // https://nimblewebdeveloper.com/blog/convert-react-class-to-function-component
 // See "Quick steps to convert to a function component" section
 
-class PaintingsList extends React.Component{
-  render(){
+const PaintingsList = (props) => {
     return(
       <div>
         <h1>Paintings</h1>
         {
-          this.props.paintings.map(painting => (
+          props.paintings.map(painting => (
             <Painting
               key={painting.id}
               painting={painting}
@@ -20,7 +19,6 @@ class PaintingsList extends React.Component{
         }
       </div>
     );
-  }
 }
 
 export default PaintingsList;
